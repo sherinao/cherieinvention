@@ -1,0 +1,22 @@
+<mat-card>
+  <form #publisherForm="ngForm" (ngSubmit)="save(publisherForm.value)">
+    <mat-card-header>
+      <mat-card-title><h2>{{publisher.id ? 'Edit' : 'Add'}} Publisher</h2></mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{publisher.giphyUrl}}" alt="{{publisher.name}}" class="example-card">
+    <mat-card-content>
+      <input type="hidden" name="id" [(ngModel)]="publisher.id">
+      <mat-form-field>
+        <input matInput placeholder="Name" [(ngModel)]="publisher.name"
+               required name="name" #name>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button color="primary" type="submit"
+              [disabled]="!publisherForm.valid">SAVE</button>&nbsp;
+      <button mat-stroked-button  color="warn" (click)="remove(publisher.id)"
+              *ngIf="publisher.id" type="button">DELETE</button>&nbsp;
+      <a mat-stroked-button color="primary" routerLink="/publisher-list">CANCEL</a>
+    </mat-card-actions>
+  </form>
+</mat-card>

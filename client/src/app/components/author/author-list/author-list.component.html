@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-title>Author List</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let author of authors">
+        <img mat-list-avatar src="{{author.giphyUrl}}" alt="{{author.name}}">
+        <h3 mat-line>
+          <a mat-button [routerLink]="['/author-edit', author.id]">{{author.name}}</a>
+        </h3>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <a mat-stroked-button color="primary" routerLink="/author-add">ADD</a>
+</mat-card>

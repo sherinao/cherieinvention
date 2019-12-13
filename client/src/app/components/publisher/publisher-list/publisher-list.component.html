@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-title>Publisher List</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let publisher of publishers">
+        <img mat-list-avatar src="{{publisher.giphyUrl}}" alt="{{publisher.name}}">
+        <h3 mat-line>
+          <a mat-button [routerLink]="['/publisher-edit', publisher.id]">{{publisher.name}}</a>
+        </h3>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <a mat-stroked-button color="primary" routerLink="/publisher-add">ADD</a>
+</mat-card>

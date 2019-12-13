@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><h2>{{inventory.name}}</h2></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <zxing-scanner #scanner  start="true"  (scanSuccess)="handleQrCodeResult($event)" class="small-video"></zxing-scanner>
+
+    <p>
+      Result:
+      <strong>{{ qrResultString }}</strong>
+    </p>
+
+  </mat-card-content>
+</mat-card>

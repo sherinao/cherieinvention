@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-title>Book List</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let inventory of inventories">
+        <img mat-list-avatar src="{{inventory.giphyUrl}}" alt="{{inventory.name}}">
+        <h3 mat-line>
+          <a mat-button [routerLink]="['/inventory-edit', inventory.id]">{{inventory.name}}</a>
+        </h3>
+        <a mat-stroked-button color="primary" [routerLink]="['/barcode', inventory.id]">SCAN ISBN</a>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <a mat-stroked-button color="primary" routerLink="/inventory-add">ADD</a>
+</mat-card>
